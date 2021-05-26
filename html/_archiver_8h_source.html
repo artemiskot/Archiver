@@ -1,0 +1,229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Archivator: РСЃС…РѕРґРЅС‹Р№ С„Р°Р№Р» Archiver.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Archivator
+   &#160;<span id="projectnumber">2</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- РЎРѕР·РґР°РЅРѕ СЃРёСЃС‚РµРјРѕР№ Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'РџРѕРёСЃРє','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','РџРѕРёСЃРє');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Archiver.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iomanip&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keywordtype">void</span> print_hex(<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* buffer, <span class="keywordtype">int</span> size); </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">enum class</span> command_t</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    _add,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    _extract,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    _delete,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    _list</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classcommand__line.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcommand__line.html">command_line</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classcommand__line.html#a164511e9c1edbbf25646a3c5c177813f">   27</a></span>&#160;    <a class="code" href="classcommand__line.html#a164511e9c1edbbf25646a3c5c177813f">command_line</a>()</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        :m_command(command_t::_add)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classcommand__line.html#a954aabf712070eb9ae72caa878822567">   33</a></span>&#160;    command_t <a class="code" href="classcommand__line.html#a954aabf712070eb9ae72caa878822567">get_command</a>()</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> m_command;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classcommand__line.html#a227f0a7a8e4e1fa78ebd53bf7daaf020">   38</a></span>&#160;    <span class="keyword">const</span> std::string&amp; <a class="code" href="classcommand__line.html#a227f0a7a8e4e1fa78ebd53bf7daaf020">get_archive_name</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> m_archive_name;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classcommand__line.html#a41393ec9b6e983c4c54fd86195d8cc33">   43</a></span>&#160;    <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; <a class="code" href="classcommand__line.html#a41393ec9b6e983c4c54fd86195d8cc33">get_file_names</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> m_file_names;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classcommand__line.html#ae480e4d11b61833568255f23d0e1d12a">   48</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcommand__line.html#ae480e4d11b61833568255f23d0e1d12a">set_file_names</a>(std::vector&lt;std::string&gt; file_names)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        m_file_names = file_names;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classcommand__line.html#ac87570027173b81ecf63377aaf07538b">   53</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcommand__line.html#ac87570027173b81ecf63377aaf07538b">set_archive_name</a>(std::string archive_name)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        m_archive_name = archive_name;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> parse(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcommand__line.html#ab2a70bcc2f545fd812b98e8da38d630e">parse_file_names</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> print();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcommand__line.html#abb4e381cc89e8a3cc0dc456941f37607">print_command_list</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classcommand__line.html#acd566d81a2e26fad873bcfedc491495d">progress_bar</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    command_t                   m_command;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::string                 m_archive_name;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::vector&lt;std::string&gt;    m_file_names;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classfile__header.html">   75</a></span>&#160;<span class="keyword">class </span><a class="code" href="classfile__header.html">file_header</a></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classfile__header.html#abd4a7a0f30da11696b5e64459bec36b6">   79</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classfile__header.html#abd4a7a0f30da11696b5e64459bec36b6">set_name</a>(<span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        m_name = name;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classfile__header.html#aacc6579e4bb97f729e92bb864245ac7b">   84</a></span>&#160;    <span class="keyword">const</span> std::string&amp; <a class="code" href="classfile__header.html#aacc6579e4bb97f729e92bb864245ac7b">get_name</a>()</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> m_name;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classfile__header.html#ace4059838115e38586fd73db41a0ba6e">   89</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classfile__header.html#ace4059838115e38586fd73db41a0ba6e">set_size</a>(int64_t size)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        m_size = size;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classfile__header.html#a8ef5a2d91093c4fb92e728fad53cc152">   94</a></span>&#160;    int64_t <a class="code" href="classfile__header.html#a8ef5a2d91093c4fb92e728fad53cc152">get_size</a>()</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> m_size;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classfile__header.html#a8f86075bd0c776a34a38578a69730ac4">   99</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classfile__header.html#a8f86075bd0c776a34a38578a69730ac4">set_first_byte</a>(int64_t first_byte)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        m_first_byte = first_byte;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classfile__header.html#a6ec8843c97f5e95f538235928c3079ba">  104</a></span>&#160;    int64_t <a class="code" href="classfile__header.html#a6ec8843c97f5e95f538235928c3079ba">get_first_byte</a>()</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    {</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">return</span> m_first_byte;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    std::string m_name;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    int64_t m_size;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    int64_t m_first_byte;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classarchivator__info.html">  117</a></span>&#160;<span class="keyword">class </span><a class="code" href="classarchivator__info.html">archivator_info</a></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#a5ba4ee2227d5be3fa6fb737e051ad24d">get_file_info</a>(<span class="keyword">const</span> std::string&amp; file_name, <a class="code" href="classfile__header.html">file_header</a>&amp; fh); </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    std::string <a class="code" href="classarchivator__info.html#a04b0d58eef9124e4259cf612078161b8">get_file_name</a>(std::string <span class="keyword">const</span>&amp; path);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    std::ifstream::pos_type <a class="code" href="classarchivator__info.html#a930dad6b8b3ff160b2a3ff2e009381dc">get_file_size</a>(<span class="keyword">const</span> std::string&amp; filename);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#ae48dec092b59a7d2cb630e54dd2a003a">construct_header</a>(std::vector&lt;std::string&gt;&amp; file_paths,std::vector&lt;file_header&gt;&amp; headers, <span class="keywordtype">bool</span> flag);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#a99627eed12e3af7839ab0789f4f41999">pack</a>(<span class="keyword">const</span> <a class="code" href="classcommand__line.html">command_line</a>&amp; cl); </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#a9075752bb3498b2f1c6596f5f525a88f">unpack</a>(<span class="keyword">const</span> <a class="code" href="classcommand__line.html">command_line</a>&amp; cl); </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#a5d10027ddf958d7e37693113393edbc7">delete_file</a>(<span class="keyword">const</span> <a class="code" href="classcommand__line.html">command_line</a>&amp; cl); </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#a4cc563722bd29bc9833aeb73ccc6c19a">list</a>(<span class="keyword">const</span> <a class="code" href="classcommand__line.html">command_line</a>&amp; cl); </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#abc287398dfd18ae1c9b75d18849fcad8">write_header</a>(std::ofstream&amp; out, <span class="keyword">const</span> std::vector&lt;file_header&gt;&amp; headers); </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#a5a5a27ce23de93a221f1c1f5ea9ccba2">write_file</a>(std::ofstream&amp; out,std::string file_name); </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#ae5e4dce1768b4db29e6680901757c619">check_file</a>(std::string file_name); </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#adb4b3049b27f1083ef6bef041ef9c1ff">get_header_info</a>(std::ifstream&amp; in, std::vector&lt;file_header&gt;&amp; files); </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#aff366b24bec1ba34f96d09ecb4f40963">rewrite_files</a>(std::ifstream&amp; in, std::ofstream&amp; out, <a class="code" href="classfile__header.html">file_header</a> file, <span class="keywordtype">bool</span> action); </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#a40987268a86c96852f2b120d8c351e6c">int64ToChar</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> mesg[], int64_t num);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classarchivator__info.html#aa5cc50de052f4141da43e4d9213560a8">XOR_cipher_decipher</a>(<span class="keywordtype">char</span>&amp; orignal_char);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    int64_t <a class="code" href="classarchivator__info.html#a83be38cd91f6e12b2ae96429a2d179e5">charTo64bitNum</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> a[]);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">void</span> check_add_file_paths(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; file_names);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    std::vector&lt;file_header&gt; file_info;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    std::string name = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">int</span> file_amount = 0; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">char</span> signature[6] = <span class="stringliteral">&quot;art25&quot;</span>; </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;};</div>
+<div class="ttc" id="aclassarchivator__info_html"><div class="ttname"><a href="classarchivator__info.html">archivator_info</a></div><div class="ttdef"><b>Definition:</b> Archiver.h:118</div></div>
+<div class="ttc" id="aclassarchivator__info_html_a04b0d58eef9124e4259cf612078161b8"><div class="ttname"><a href="classarchivator__info.html#a04b0d58eef9124e4259cf612078161b8">archivator_info::get_file_name</a></div><div class="ttdeci">std::string get_file_name(std::string const &amp;path)</div><div class="ttdoc">метод получения имени из пути файла</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:111</div></div>
+<div class="ttc" id="aclassarchivator__info_html_a40987268a86c96852f2b120d8c351e6c"><div class="ttname"><a href="classarchivator__info.html#a40987268a86c96852f2b120d8c351e6c">archivator_info::int64ToChar</a></div><div class="ttdeci">void int64ToChar(unsigned char mesg[], int64_t num)</div><div class="ttdoc">перевод из int64 к символьному типу</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:363</div></div>
+<div class="ttc" id="aclassarchivator__info_html_a4cc563722bd29bc9833aeb73ccc6c19a"><div class="ttname"><a href="classarchivator__info.html#a4cc563722bd29bc9833aeb73ccc6c19a">archivator_info::list</a></div><div class="ttdeci">void list(const command_line &amp;cl)</div><div class="ttdoc">список файлов в архиве</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:313</div></div>
+<div class="ttc" id="aclassarchivator__info_html_a5a5a27ce23de93a221f1c1f5ea9ccba2"><div class="ttname"><a href="classarchivator__info.html#a5a5a27ce23de93a221f1c1f5ea9ccba2">archivator_info::write_file</a></div><div class="ttdeci">void write_file(std::ofstream &amp;out, std::string file_name)</div><div class="ttdoc">метод записи из файла в архив</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:437</div></div>
+<div class="ttc" id="aclassarchivator__info_html_a5ba4ee2227d5be3fa6fb737e051ad24d"><div class="ttname"><a href="classarchivator__info.html#a5ba4ee2227d5be3fa6fb737e051ad24d">archivator_info::get_file_info</a></div><div class="ttdeci">void get_file_info(const std::string &amp;file_name, file_header &amp;fh)</div><div class="ttdoc">получение информации о файле, размер, имя</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:103</div></div>
+<div class="ttc" id="aclassarchivator__info_html_a5d10027ddf958d7e37693113393edbc7"><div class="ttname"><a href="classarchivator__info.html#a5d10027ddf958d7e37693113393edbc7">archivator_info::delete_file</a></div><div class="ttdeci">void delete_file(const command_line &amp;cl)</div><div class="ttdoc">удаление файлов</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:247</div></div>
+<div class="ttc" id="aclassarchivator__info_html_a83be38cd91f6e12b2ae96429a2d179e5"><div class="ttname"><a href="classarchivator__info.html#a83be38cd91f6e12b2ae96429a2d179e5">archivator_info::charTo64bitNum</a></div><div class="ttdeci">int64_t charTo64bitNum(unsigned char a[])</div><div class="ttdoc">перевод из символьного типа к int64</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:367</div></div>
+<div class="ttc" id="aclassarchivator__info_html_a9075752bb3498b2f1c6596f5f525a88f"><div class="ttname"><a href="classarchivator__info.html#a9075752bb3498b2f1c6596f5f525a88f">archivator_info::unpack</a></div><div class="ttdeci">void unpack(const command_line &amp;cl)</div><div class="ttdoc">разархивация файлов</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:222</div></div>
+<div class="ttc" id="aclassarchivator__info_html_a930dad6b8b3ff160b2a3ff2e009381dc"><div class="ttname"><a href="classarchivator__info.html#a930dad6b8b3ff160b2a3ff2e009381dc">archivator_info::get_file_size</a></div><div class="ttdeci">std::ifstream::pos_type get_file_size(const std::string &amp;filename)</div><div class="ttdoc">получает размер файла</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:116</div></div>
+<div class="ttc" id="aclassarchivator__info_html_a99627eed12e3af7839ab0789f4f41999"><div class="ttname"><a href="classarchivator__info.html#a99627eed12e3af7839ab0789f4f41999">archivator_info::pack</a></div><div class="ttdeci">void pack(const command_line &amp;cl)</div><div class="ttdoc">архивация файлов</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:153</div></div>
+<div class="ttc" id="aclassarchivator__info_html_aa5cc50de052f4141da43e4d9213560a8"><div class="ttname"><a href="classarchivator__info.html#aa5cc50de052f4141da43e4d9213560a8">archivator_info::XOR_cipher_decipher</a></div><div class="ttdeci">void XOR_cipher_decipher(char &amp;orignal_char)</div><div class="ttdoc">метод XOR шифрования</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:460</div></div>
+<div class="ttc" id="aclassarchivator__info_html_abc287398dfd18ae1c9b75d18849fcad8"><div class="ttname"><a href="classarchivator__info.html#abc287398dfd18ae1c9b75d18849fcad8">archivator_info::write_header</a></div><div class="ttdeci">void write_header(std::ofstream &amp;out, const std::vector&lt; file_header &gt; &amp;headers)</div><div class="ttdoc">метод архивации файла</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:331</div></div>
+<div class="ttc" id="aclassarchivator__info_html_adb4b3049b27f1083ef6bef041ef9c1ff"><div class="ttname"><a href="classarchivator__info.html#adb4b3049b27f1083ef6bef041ef9c1ff">archivator_info::get_header_info</a></div><div class="ttdeci">void get_header_info(std::ifstream &amp;in, std::vector&lt; file_header &gt; &amp;files)</div><div class="ttdoc">получение информации из заголовка</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:379</div></div>
+<div class="ttc" id="aclassarchivator__info_html_ae48dec092b59a7d2cb630e54dd2a003a"><div class="ttname"><a href="classarchivator__info.html#ae48dec092b59a7d2cb630e54dd2a003a">archivator_info::construct_header</a></div><div class="ttdeci">void construct_header(std::vector&lt; std::string &gt; &amp;file_paths, std::vector&lt; file_header &gt; &amp;headers, bool flag)</div><div class="ttdoc">принимает команды</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:121</div></div>
+<div class="ttc" id="aclassarchivator__info_html_ae5e4dce1768b4db29e6680901757c619"><div class="ttname"><a href="classarchivator__info.html#ae5e4dce1768b4db29e6680901757c619">archivator_info::check_file</a></div><div class="ttdeci">static void check_file(std::string file_name)</div><div class="ttdoc">метод проверки существования файла</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:465</div></div>
+<div class="ttc" id="aclassarchivator__info_html_aff366b24bec1ba34f96d09ecb4f40963"><div class="ttname"><a href="classarchivator__info.html#aff366b24bec1ba34f96d09ecb4f40963">archivator_info::rewrite_files</a></div><div class="ttdeci">void rewrite_files(std::ifstream &amp;in, std::ofstream &amp;out, file_header file, bool action)</div><div class="ttdoc">запись файлов из архива</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:418</div></div>
+<div class="ttc" id="aclasscommand__line_html"><div class="ttname"><a href="classcommand__line.html">command_line</a></div><div class="ttdef"><b>Definition:</b> Archiver.h:24</div></div>
+<div class="ttc" id="aclasscommand__line_html_a164511e9c1edbbf25646a3c5c177813f"><div class="ttname"><a href="classcommand__line.html#a164511e9c1edbbf25646a3c5c177813f">command_line::command_line</a></div><div class="ttdeci">command_line()</div><div class="ttdoc">конструктор</div><div class="ttdef"><b>Definition:</b> Archiver.h:27</div></div>
+<div class="ttc" id="aclasscommand__line_html_a227f0a7a8e4e1fa78ebd53bf7daaf020"><div class="ttname"><a href="classcommand__line.html#a227f0a7a8e4e1fa78ebd53bf7daaf020">command_line::get_archive_name</a></div><div class="ttdeci">const std::string &amp; get_archive_name() const</div><div class="ttdoc">получает имя архива</div><div class="ttdef"><b>Definition:</b> Archiver.h:38</div></div>
+<div class="ttc" id="aclasscommand__line_html_a41393ec9b6e983c4c54fd86195d8cc33"><div class="ttname"><a href="classcommand__line.html#a41393ec9b6e983c4c54fd86195d8cc33">command_line::get_file_names</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; get_file_names() const</div><div class="ttdoc">получает имена файлов</div><div class="ttdef"><b>Definition:</b> Archiver.h:43</div></div>
+<div class="ttc" id="aclasscommand__line_html_a954aabf712070eb9ae72caa878822567"><div class="ttname"><a href="classcommand__line.html#a954aabf712070eb9ae72caa878822567">command_line::get_command</a></div><div class="ttdeci">command_t get_command()</div><div class="ttdoc">получает нужную комманду</div><div class="ttdef"><b>Definition:</b> Archiver.h:33</div></div>
+<div class="ttc" id="aclasscommand__line_html_ab2a70bcc2f545fd812b98e8da38d630e"><div class="ttname"><a href="classcommand__line.html#ab2a70bcc2f545fd812b98e8da38d630e">command_line::parse_file_names</a></div><div class="ttdeci">void parse_file_names(int argc, char *argv[])</div><div class="ttdoc">считывает имена файлов</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:87</div></div>
+<div class="ttc" id="aclasscommand__line_html_abb4e381cc89e8a3cc0dc456941f37607"><div class="ttname"><a href="classcommand__line.html#abb4e381cc89e8a3cc0dc456941f37607">command_line::print_command_list</a></div><div class="ttdeci">void print_command_list()</div><div class="ttdoc">выводит список команд</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:33</div></div>
+<div class="ttc" id="aclasscommand__line_html_ac87570027173b81ecf63377aaf07538b"><div class="ttname"><a href="classcommand__line.html#ac87570027173b81ecf63377aaf07538b">command_line::set_archive_name</a></div><div class="ttdeci">void set_archive_name(std::string archive_name)</div><div class="ttdoc">устанавливает имя архива</div><div class="ttdef"><b>Definition:</b> Archiver.h:53</div></div>
+<div class="ttc" id="aclasscommand__line_html_acd566d81a2e26fad873bcfedc491495d"><div class="ttname"><a href="classcommand__line.html#acd566d81a2e26fad873bcfedc491495d">command_line::progress_bar</a></div><div class="ttdeci">static void progress_bar()</div><div class="ttdoc">выводит полоску загрузки</div><div class="ttdef"><b>Definition:</b> Archiver.cpp:14</div></div>
+<div class="ttc" id="aclasscommand__line_html_ae480e4d11b61833568255f23d0e1d12a"><div class="ttname"><a href="classcommand__line.html#ae480e4d11b61833568255f23d0e1d12a">command_line::set_file_names</a></div><div class="ttdeci">void set_file_names(std::vector&lt; std::string &gt; file_names)</div><div class="ttdoc">заполняет вектор именами файлов, для работы с ними</div><div class="ttdef"><b>Definition:</b> Archiver.h:48</div></div>
+<div class="ttc" id="aclassfile__header_html"><div class="ttname"><a href="classfile__header.html">file_header</a></div><div class="ttdef"><b>Definition:</b> Archiver.h:76</div></div>
+<div class="ttc" id="aclassfile__header_html_a6ec8843c97f5e95f538235928c3079ba"><div class="ttname"><a href="classfile__header.html#a6ec8843c97f5e95f538235928c3079ba">file_header::get_first_byte</a></div><div class="ttdeci">int64_t get_first_byte()</div><div class="ttdoc">получает из хедера первый байт файла</div><div class="ttdef"><b>Definition:</b> Archiver.h:104</div></div>
+<div class="ttc" id="aclassfile__header_html_a8ef5a2d91093c4fb92e728fad53cc152"><div class="ttname"><a href="classfile__header.html#a8ef5a2d91093c4fb92e728fad53cc152">file_header::get_size</a></div><div class="ttdeci">int64_t get_size()</div><div class="ttdoc">получает размер файла</div><div class="ttdef"><b>Definition:</b> Archiver.h:94</div></div>
+<div class="ttc" id="aclassfile__header_html_a8f86075bd0c776a34a38578a69730ac4"><div class="ttname"><a href="classfile__header.html#a8f86075bd0c776a34a38578a69730ac4">file_header::set_first_byte</a></div><div class="ttdeci">void set_first_byte(int64_t first_byte)</div><div class="ttdoc">записывает в хедер первый байт файла в архиве</div><div class="ttdef"><b>Definition:</b> Archiver.h:99</div></div>
+<div class="ttc" id="aclassfile__header_html_aacc6579e4bb97f729e92bb864245ac7b"><div class="ttname"><a href="classfile__header.html#aacc6579e4bb97f729e92bb864245ac7b">file_header::get_name</a></div><div class="ttdeci">const std::string &amp; get_name()</div><div class="ttdoc">получает имя файла</div><div class="ttdef"><b>Definition:</b> Archiver.h:84</div></div>
+<div class="ttc" id="aclassfile__header_html_abd4a7a0f30da11696b5e64459bec36b6"><div class="ttname"><a href="classfile__header.html#abd4a7a0f30da11696b5e64459bec36b6">file_header::set_name</a></div><div class="ttdeci">void set_name(const std::string &amp;name)</div><div class="ttdoc">устанавливает имя файла</div><div class="ttdef"><b>Definition:</b> Archiver.h:79</div></div>
+<div class="ttc" id="aclassfile__header_html_ace4059838115e38586fd73db41a0ba6e"><div class="ttname"><a href="classfile__header.html#ace4059838115e38586fd73db41a0ba6e">file_header::set_size</a></div><div class="ttdeci">void set_size(int64_t size)</div><div class="ttdoc">устанавливает размер файла</div><div class="ttdef"><b>Definition:</b> Archiver.h:89</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+РЎРѕР·РґР°РЅРѕ СЃРёСЃС‚РµРјРѕР№&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

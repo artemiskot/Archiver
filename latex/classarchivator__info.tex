@@ -1,0 +1,62 @@
+\hypertarget{classarchivator__info}{}\doxysection{РљР»Р°СЃСЃ archivator\+\_\+info}
+\label{classarchivator__info}\index{archivator\_info@{archivator\_info}}
+\doxysubsection*{РћС‚РєСЂС‹С‚С‹Рµ С‡Р»РµРЅС‹}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classarchivator__info_a5ba4ee2227d5be3fa6fb737e051ad24d}\label{classarchivator__info_a5ba4ee2227d5be3fa6fb737e051ad24d}} 
+void \mbox{\hyperlink{classarchivator__info_a5ba4ee2227d5be3fa6fb737e051ad24d}{get\+\_\+file\+\_\+info}} (const std\+::string \&file\+\_\+name, \mbox{\hyperlink{classfile__header}{file\+\_\+header}} \&fh)
+\begin{DoxyCompactList}\small\item\em получение информации о файле, размер, имя \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_a04b0d58eef9124e4259cf612078161b8}\label{classarchivator__info_a04b0d58eef9124e4259cf612078161b8}} 
+std\+::string \mbox{\hyperlink{classarchivator__info_a04b0d58eef9124e4259cf612078161b8}{get\+\_\+file\+\_\+name}} (std\+::string const \&path)
+\begin{DoxyCompactList}\small\item\em метод получения имени из пути файла \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_a930dad6b8b3ff160b2a3ff2e009381dc}\label{classarchivator__info_a930dad6b8b3ff160b2a3ff2e009381dc}} 
+std\+::ifstream\+::pos\+\_\+type \mbox{\hyperlink{classarchivator__info_a930dad6b8b3ff160b2a3ff2e009381dc}{get\+\_\+file\+\_\+size}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em получает размер файла \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_ae48dec092b59a7d2cb630e54dd2a003a}\label{classarchivator__info_ae48dec092b59a7d2cb630e54dd2a003a}} 
+void \mbox{\hyperlink{classarchivator__info_ae48dec092b59a7d2cb630e54dd2a003a}{construct\+\_\+header}} (std\+::vector$<$ std\+::string $>$ \&file\+\_\+paths, std\+::vector$<$ \mbox{\hyperlink{classfile__header}{file\+\_\+header}} $>$ \&headers, bool flag)
+\begin{DoxyCompactList}\small\item\em принимает команды \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_a99627eed12e3af7839ab0789f4f41999}\label{classarchivator__info_a99627eed12e3af7839ab0789f4f41999}} 
+void \mbox{\hyperlink{classarchivator__info_a99627eed12e3af7839ab0789f4f41999}{pack}} (const \mbox{\hyperlink{classcommand__line}{command\+\_\+line}} \&cl)
+\begin{DoxyCompactList}\small\item\em архивация файлов \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_a9075752bb3498b2f1c6596f5f525a88f}\label{classarchivator__info_a9075752bb3498b2f1c6596f5f525a88f}} 
+void \mbox{\hyperlink{classarchivator__info_a9075752bb3498b2f1c6596f5f525a88f}{unpack}} (const \mbox{\hyperlink{classcommand__line}{command\+\_\+line}} \&cl)
+\begin{DoxyCompactList}\small\item\em разархивация файлов \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_a5d10027ddf958d7e37693113393edbc7}\label{classarchivator__info_a5d10027ddf958d7e37693113393edbc7}} 
+void \mbox{\hyperlink{classarchivator__info_a5d10027ddf958d7e37693113393edbc7}{delete\+\_\+file}} (const \mbox{\hyperlink{classcommand__line}{command\+\_\+line}} \&cl)
+\begin{DoxyCompactList}\small\item\em удаление файлов \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_a4cc563722bd29bc9833aeb73ccc6c19a}\label{classarchivator__info_a4cc563722bd29bc9833aeb73ccc6c19a}} 
+void \mbox{\hyperlink{classarchivator__info_a4cc563722bd29bc9833aeb73ccc6c19a}{list}} (const \mbox{\hyperlink{classcommand__line}{command\+\_\+line}} \&cl)
+\begin{DoxyCompactList}\small\item\em список файлов в архиве \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_abc287398dfd18ae1c9b75d18849fcad8}\label{classarchivator__info_abc287398dfd18ae1c9b75d18849fcad8}} 
+void \mbox{\hyperlink{classarchivator__info_abc287398dfd18ae1c9b75d18849fcad8}{write\+\_\+header}} (std\+::ofstream \&out, const std\+::vector$<$ \mbox{\hyperlink{classfile__header}{file\+\_\+header}} $>$ \&headers)
+\begin{DoxyCompactList}\small\item\em метод архивации файла \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_a5a5a27ce23de93a221f1c1f5ea9ccba2}\label{classarchivator__info_a5a5a27ce23de93a221f1c1f5ea9ccba2}} 
+void \mbox{\hyperlink{classarchivator__info_a5a5a27ce23de93a221f1c1f5ea9ccba2}{write\+\_\+file}} (std\+::ofstream \&out, std\+::string file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em метод записи из файла в архив \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_adb4b3049b27f1083ef6bef041ef9c1ff}\label{classarchivator__info_adb4b3049b27f1083ef6bef041ef9c1ff}} 
+void \mbox{\hyperlink{classarchivator__info_adb4b3049b27f1083ef6bef041ef9c1ff}{get\+\_\+header\+\_\+info}} (std\+::ifstream \&in, std\+::vector$<$ \mbox{\hyperlink{classfile__header}{file\+\_\+header}} $>$ \&files)
+\begin{DoxyCompactList}\small\item\em получение информации из заголовка \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_aff366b24bec1ba34f96d09ecb4f40963}\label{classarchivator__info_aff366b24bec1ba34f96d09ecb4f40963}} 
+void \mbox{\hyperlink{classarchivator__info_aff366b24bec1ba34f96d09ecb4f40963}{rewrite\+\_\+files}} (std\+::ifstream \&in, std\+::ofstream \&out, \mbox{\hyperlink{classfile__header}{file\+\_\+header}} file, bool action)
+\begin{DoxyCompactList}\small\item\em запись файлов из архива \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_a40987268a86c96852f2b120d8c351e6c}\label{classarchivator__info_a40987268a86c96852f2b120d8c351e6c}} 
+void \mbox{\hyperlink{classarchivator__info_a40987268a86c96852f2b120d8c351e6c}{int64\+To\+Char}} (unsigned char mesg\mbox{[}$\,$\mbox{]}, int64\+\_\+t num)
+\begin{DoxyCompactList}\small\item\em перевод из int64 к символьному типу \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_aa5cc50de052f4141da43e4d9213560a8}\label{classarchivator__info_aa5cc50de052f4141da43e4d9213560a8}} 
+void \mbox{\hyperlink{classarchivator__info_aa5cc50de052f4141da43e4d9213560a8}{XOR\+\_\+cipher\+\_\+decipher}} (char \&orignal\+\_\+char)
+\begin{DoxyCompactList}\small\item\em метод XOR шифрования \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classarchivator__info_a83be38cd91f6e12b2ae96429a2d179e5}\label{classarchivator__info_a83be38cd91f6e12b2ae96429a2d179e5}} 
+int64\+\_\+t \mbox{\hyperlink{classarchivator__info_a83be38cd91f6e12b2ae96429a2d179e5}{char\+To64bit\+Num}} (unsigned char a\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em перевод из символьного типа к int64 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{РћС‚РєСЂС‹С‚С‹Рµ СЃС‚Р°С‚РёС‡РµСЃРєРёРµ С‡Р»РµРЅС‹}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classarchivator__info_ae5e4dce1768b4db29e6680901757c619}\label{classarchivator__info_ae5e4dce1768b4db29e6680901757c619}} 
+static void \mbox{\hyperlink{classarchivator__info_ae5e4dce1768b4db29e6680901757c619}{check\+\_\+file}} (std\+::string file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em метод проверки существования файла \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+РћР±СЉСЏРІР»РµРЅРёСЏ Рё РѕРїРёСЃР°РЅРёСЏ С‡Р»РµРЅРѕРІ РєР»Р°СЃСЃРѕРІ РЅР°С…РѕРґСЏС‚СЃСЏ РІ С„Р°Р№Р»Р°С…\+:\begin{DoxyCompactItemize}
+\item 
+Archiver.\+h\item 
+Archiver.\+cpp\end{DoxyCompactItemize}

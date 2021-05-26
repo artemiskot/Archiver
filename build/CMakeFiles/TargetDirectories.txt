@@ -1,0 +1,3 @@
+D:/DISK_D/Artem_new/C++/Archivator/v2/build/CMakeFiles/Archivator.dir
+D:/DISK_D/Artem_new/C++/Archivator/v2/build/CMakeFiles/ALL_BUILD.dir
+D:/DISK_D/Artem_new/C++/Archivator/v2/build/CMakeFiles/ZERO_CHECK.dir
